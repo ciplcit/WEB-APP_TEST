@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapphire Skin Medical Wellness</title>
+    <meta name="description"
+        content="Official website of Sapphire Skin Medical Wellness. Premium skin treatments and aesthetic care.">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sapphire: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7', // Primary Brand Color
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                            950: '#082f49',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Styles */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .hero-bg {
+            /* Fallback to a nice gradient or placeholder if image is missing */
+            background-image: linear-gradient(rgba(12, 74, 110, 0.5), rgba(12, 74, 110, 0.7)), url('IMG/IMG_1603.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Smooth reveal animation classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased font-sans">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 glass-nav" id="navbar">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div
+                        class="h-12 w-12 overflow-hidden rounded-full border-2 border-sapphire-600 shadow-sm relative bg-white">
+                        <img src="IMG/LOGO.jpeg" alt="Sapphire Skin Logo" class="h-full w-full object-cover">
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-serif font-bold text-sapphire-900 tracking-wide">SAPPHIRE SKIN</h1>
+                        <p class="text-xs text-sapphire-600 font-medium tracking-widest uppercase">Medical Wellness</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home"
+                        class="text-gray-600 hover:text-sapphire-600 font-medium transition-colors text-sm uppercase tracking-wider">Home</a>
+                    <a href="#treatments"
+                        class="text-gray-600 hover:text-sapphire-600 font-medium transition-colors text-sm uppercase tracking-wider">Treatments</a>
+                    <a href="#about"
+                        class="text-gray-600 hover:text-sapphire-600 font-medium transition-colors text-sm uppercase tracking-wider">About
+                        Us</a>
+                    <a href="#contact"
+                        class="px-6 py-2 bg-sapphire-600 text-white rounded-full font-medium hover:bg-sapphire-700 transition-all shadow-lg hover:shadow-sapphire-200 transform hover:-translate-y-0.5 text-sm uppercase tracking-wide">
+                        Book Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-800 focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl">
+            <div class="flex flex-col px-6 py-4 space-y-4">
+                <a href="#home" class="text-gray-800 hover:text-sapphire-600 font-medium">Home</a>
+                <a href="#treatments" class="text-gray-800 hover:text-sapphire-600 font-medium">Treatments</a>
+                <a href="#about" class="text-gray-800 hover:text-sapphire-600 font-medium">About Us</a>
+                <a href="#contact" class="text-sapphire-600 font-bold">Book Appointment</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center hero-bg">
+        <div class="absolute inset-0 bg-black/30"></div> <!-- Overlay -->
+        <div class="container mx-auto px-6 relative z-10 text-center text-white">
+            <span
+                class="block text-sapphire-200 tracking-[0.2em] uppercase font-bold text-sm mb-4 animate-fade-in-up">Welcome
+                to Sapphire Skin</span>
+            <h1
+                class="text-5xl md:text-7xl font-serif font-bold mb-6 leading-tight text-shadow animate-fade-in-up delay-100">
+                Reveal Your <br />
+                <span class="italic text-white">Inner Radiance</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-100 mb-10 max-w-2xl mx-auto font-light animate-fade-in-up delay-200">
+                Experience the pinnacle of medical aesthetics and wellness treatments tailored to your unique beauty.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-4 animate-fade-in-up delay-300">
+                <a href="#treatments"
+                    class="px-8 py-3 bg-sapphire-600 text-white rounded-full font-semibold hover:bg-sapphire-700 transition-all shadow-lg hover:shadow-sapphire-500/50">
+                    Explore Treatments
+                </a>
+                <a href="#contact"
+                    class="px-8 py-3 bg-white/10 backdrop-blur-sm border border-white/40 text-white rounded-full font-semibold hover:bg-white hover:text-sapphire-900 transition-all">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#treatments" class="text-white opacity-70 hover:opacity-100">
+                <i class="fa-solid fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Features / Intro -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-10 text-center">
+                <div
+                    class="p-6 rounded-2xl bg-sapphire-50 hover:bg-white hover:shadow-xl transition-all duration-300 border border-transparent hover:border-sapphire-100 reveal">
+                    <div
+                        class="w-16 h-16 bg-sapphire-100 rounded-full flex items-center justify-center mx-auto mb-6 text-sapphire-600">
+                        <i class="fa-solid fa-user-doctor text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-gray-900 mb-3">Expert Specialists</h3>
+                    <p class="text-gray-600 leading-relaxed">Our team of certified professionals ensures safe and
+                        effective treatments tailored to you.</p>
+                </div>
+                <div
+                    class="p-6 rounded-2xl bg-sapphire-50 hover:bg-white hover:shadow-xl transition-all duration-300 border border-transparent hover:border-sapphire-100 reveal">
+                    <div
+                        class="w-16 h-16 bg-sapphire-100 rounded-full flex items-center justify-center mx-auto mb-6 text-sapphire-600">
+                        <i class="fa-solid fa-star text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-gray-900 mb-3">Advanced Technology</h3>
+                    <p class="text-gray-600 leading-relaxed">Using state-of-the-art medical equipment for minimal
+                        downtime and maximum results.</p>
+                </div>
+                <div
+                    class="p-6 rounded-2xl bg-sapphire-50 hover:bg-white hover:shadow-xl transition-all duration-300 border border-transparent hover:border-sapphire-100 reveal">
+                    <div
+                        class="w-16 h-16 bg-sapphire-100 rounded-full flex items-center justify-center mx-auto mb-6 text-sapphire-600">
+                        <i class="fa-solid fa-spa text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-gray-900 mb-3">Holistic Wellness</h3>
+                    <p class="text-gray-600 leading-relaxed">Combining aesthetic medicine with wellness practices for
+                        total rejuvenation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Treatments Section -->
+    <section id="treatments" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <span class="text-sapphire-600 font-bold tracking-wider uppercase text-sm">Our Services</span>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 mt-3 mb-6">Curated Treatments</h2>
+                <div class="w-20 h-1 bg-sapphire-600 mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Treatment 1 -->
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 reveal">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="IMG/ANTI-AGING.jpeg" alt="Anti-Aging Facial"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <p class="text-white font-medium">Restore youth and vitality.</p>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3
+                            class="text-2xl font-serif font-bold text-gray-900 mb-3 group-hover:text-sapphire-600 transition-colors">
+                            Anti-Aging Therapy</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">Revitalize your skin with our signature anti-aging
+                            treatments designed to smooth fine lines.</p>
+                        <a href="#contact"
+                            class="inline-block text-sapphire-600 font-semibold hover:tracking-wide transition-all border-b-2 border-transparent hover:border-sapphire-600">Learn
+                            More</a>
+                    </div>
+                </div>
+
+                <!-- Treatment 2 -->
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 reveal">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="IMG/LASER.jpeg" alt="Laser Treatment"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-8">
+                        <h3
+                            class="text-2xl font-serif font-bold text-gray-900 mb-3 group-hover:text-sapphire-600 transition-colors">
+                            Laser Resurfacing</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">Advanced laser technology to correct acne scars,
+                            pigmentation, and uneven texture.</p>
+                        <a href="#contact"
+                            class="inline-block text-sapphire-600 font-semibold hover:tracking-wide transition-all border-b-2 border-transparent hover:border-sapphire-600">Learn
+                            More</a>
+                    </div>
+                </div>
+
+                <!-- Treatment 3 -->
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 reveal">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="IMG/PRP-Treatment-1.jpg" alt="PRP Therapy"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-8">
+                        <h3
+                            class="text-2xl font-serif font-bold text-gray-900 mb-3 group-hover:text-sapphire-600 transition-colors">
+                            PRP Therapy</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">Platelet-Rich Plasma treatment for hair restoration
+                            and
+                            facial rejuvenation.</p>
+                        <a href="#contact"
+                            class="inline-block text-sapphire-600 font-semibold hover:tracking-wide transition-all border-b-2 border-transparent hover:border-sapphire-600">Learn
+                            More</a>
+                    </div>
+                </div>
+
+                <!-- Treatment 4 -->
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 reveal">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://loremflickr.com/600/400/skincare,woman/all?lock=20" alt="Acne Solutions"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-8">
+                        <h3
+                            class="text-2xl font-serif font-bold text-gray-900 mb-3 group-hover:text-sapphire-600 transition-colors">
+                            Acne Solutions</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">Targeted treatments to clear breakouts and prevent
+                            future acne issues.</p>
+                        <a href="#contact"
+                            class="inline-block text-sapphire-600 font-semibold hover:tracking-wide transition-all border-b-2 border-transparent hover:border-sapphire-600">Learn
+                            More</a>
+                    </div>
+                </div>
+
+                <!-- Treatment 5 -->
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 reveal">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://loremflickr.com/600/400/fitness,waist/all?lock=25" alt="Body Contouring"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-8">
+                        <h3
+                            class="text-2xl font-serif font-bold text-gray-900 mb-3 group-hover:text-sapphire-600 transition-colors">
+                            Body Contouring</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">Non-invasive procedures to sculpt and define your
+                            body's natural curves.</p>
+                        <a href="#contact"
+                            class="inline-block text-sapphire-600 font-semibold hover:tracking-wide transition-all border-b-2 border-transparent hover:border-sapphire-600">Learn
+                            More</a>
+                    </div>
+                </div>
+
+                <!-- Treatment 6 -->
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 reveal">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://loremflickr.com/600/400/doctor,consultation/all?lock=30" alt="Consultation"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-8">
+                        <h3
+                            class="text-2xl font-serif font-bold text-gray-900 mb-3 group-hover:text-sapphire-600 transition-colors">
+                            Expert Consultation</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">Book a one-on-one session to develop a personalized
+                            treatment plan.</p>
+                        <a href="#contact"
+                            class="inline-block text-sapphire-600 font-semibold hover:tracking-wide transition-all border-b-2 border-transparent hover:border-sapphire-600">Learn
+                            More</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 reveal">
+                    <div class="relative">
+                        <div class="absolute -top-4 -left-4 w-24 h-24 bg-sapphire-100 rounded-full z-0"></div>
+                        <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-sapphire-50 rounded-full z-0"></div>
+                        <img src="https://loremflickr.com/600/600/dermatologist,team/all?lock=40"
+                            alt="About Sapphire Skin"
+                            class="relative z-10 rounded-3xl shadow-2xl w-full object-cover h-[500px]">
+                        <!-- Decorative badge -->
+                        <div
+                            class="absolute bottom-10 -left-6 bg-white p-4 rounded-xl shadow-xl z-20 flex items-center gap-3">
+                            <div
+                                class="bg-sapphire-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">
+                                10+</div>
+                            <div>
+                                <p class="text-xs text-gray-500 uppercase font-bold">Years of</p>
+                                <p class="text-sm font-bold text-gray-900">Excellence</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 reveal">
+                    <span class="text-sapphire-600 font-bold tracking-wider uppercase text-sm">About Us</span>
+                    <h2 class="text-4xl font-serif font-bold text-gray-900 mt-2 mb-6">Redefining Medical Wellness</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        At Sapphire Skin, we believe that true beauty comes from a balance of health, science, and
+                        self-care. Our clinic combines cutting-edge medical technology with a holistic approach to
+                        wellness.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Whether you are seeking rejuvenation, skin correction, or a routine wellness boost, our team of
+                        dedicated specialists is here to guide you on your journey to confidence.
+                    </p>
+
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-gray-700">
+                            <i class="fa-solid fa-check text-sapphire-500"></i> Board-certified dermatologists
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-700">
+                            <i class="fa-solid fa-check text-sapphire-500"></i> Personalized treatment plans
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-700">
+                            <i class="fa-solid fa-check text-sapphire-500"></i> Premium, safe environment
+                        </li>
+                    </ul>
+
+                    <a href="#contact"
+                        class="px-8 py-3 border-2 border-sapphire-600 text-sapphire-600 font-bold rounded-full hover:bg-sapphire-600 hover:text-white transition-all">
+                        Meet Our Team
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial / Quote Section -->
+    <section class="py-20 bg-sapphire-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 background-pattern">
+            <!-- Add some subtle pattern here if needed via CSS or SVG -->
+        </div>
+        <div class="container mx-auto px-6 text-center relative z-10 reveal">
+            <i class="fa-solid fa-quote-left text-4xl text-sapphire-400 mb-6 opacity-50"></i>
+            <h3 class="text-2xl md:text-4xl font-serif font-medium leading-relaxed max-w-4xl mx-auto italic mb-8">
+                "The most beautiful thing you can wear is confidence. At Sapphire Skin, we help you shine from within."
+            </h3>
+            <div class="flex items-center justify-center gap-4">
+                <div>
+                    <p class="font-bold text-lg">Dr. Sarah Mitchell</p>
+                    <p class="text-sapphire-300 text-sm uppercase tracking-wider">Chief Dermatologist</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <span class="text-sapphire-600 font-bold tracking-wider uppercase text-sm">Get in Touch</span>
+                <h2 class="text-4xl font-serif font-bold text-gray-900 mt-3 mb-6">Book Your Appointment</h2>
+                <p class="text-gray-500 max-w-xl mx-auto">Ready to start your journey? Contact us today for a
+                    consultation or to schedule a treatment.</p>
+            </div>
+
+            <div
+                class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row max-w-5xl mx-auto reveal">
+                <!-- Info Side -->
+                <div
+                    class="md:w-5/12 bg-sapphire-600 p-10 text-white flex flex-col justify-between relative overflow-hidden">
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-serif font-bold mb-6">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="mt-1 bg-white/20 p-2 rounded-lg"><i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold opacity-80 mb-1">Visit Us</p>
+                                    <p class="text-sm leading-relaxed">No 20, 82 Fairfield Gardens,<br>Colombo 00800</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="mt-1 bg-white/20 p-2 rounded-lg"><i class="fa-solid fa-phone"></i></div>
+                                <div>
+                                    <p class="font-bold opacity-80 mb-1">Call Us</p>
+                                    <p class="text-sm leading-relaxed">074 394 3746</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="mt-1 bg-white/20 p-2 rounded-lg"><i class="fa-solid fa-envelope"></i></div>
+                                <div>
+                                    <p class="font-bold opacity-80 mb-1">Email Us</p>
+                                    <p class="text-sm leading-relaxed">contact@sapphireskin.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10 relative z-10">
+                        <p class="font-bold mb-4 opacity-80">Follow Us</p>
+                        <div class="flex gap-4">
+                            <a href="#"
+                                class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-white hover:text-sapphire-600 transition-all"><i
+                                    class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-white hover:text-sapphire-600 transition-all"><i
+                                    class="fa-brands fa-instagram"></i></a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-white hover:text-sapphire-600 transition-all"><i
+                                    class="fa-brands fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Side -->
+                <div class="md:w-7/12 p-10">
+                    <form class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                                <input type="text"
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-sapphire-500 focus:ring-2 focus:ring-sapphire-200 outline-none transition-all"
+                                    placeholder="John">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                                <input type="text"
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-sapphire-500 focus:ring-2 focus:ring-sapphire-200 outline-none transition-all"
+                                    placeholder="Doe">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                            <input type="email"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-sapphire-500 focus:ring-2 focus:ring-sapphire-200 outline-none transition-all"
+                                placeholder="john@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Service of Interest</label>
+                            <select
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-sapphire-500 focus:ring-2 focus:ring-sapphire-200 outline-none transition-all text-gray-500">
+                                <option>Select a Treatment</option>
+                                <option>Anti-Aging Facial</option>
+                                <option>Laser Resurfacing</option>
+                                <option>Deep Hydration</option>
+                                <option>Acne Solutions</option>
+                                <option>Consultation</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea rows="4"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-sapphire-500 focus:ring-2 focus:ring-sapphire-200 outline-none transition-all"
+                                placeholder="Tell us about your skin goals..."></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full py-4 bg-sapphire-900 text-white font-bold rounded-lg hover:bg-sapphire-800 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            Send Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-20 pb-10 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="h-10 w-10 overflow-hidden rounded-full border border-sapphire-500 bg-white">
+                            <img src="IMG/LOGO.jpeg" alt="Logo" class="h-full w-full object-cover">
+                        </div>
+                        <span class="text-xl font-serif font-bold tracking-wide">SAPPHIRE SKIN</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Dedicated to providing the highest quality medical wellness and aesthetic treatments in a
+                        luxurious, safe environment.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-sapphire-400">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#treatments" class="hover:text-white transition-colors">Treatments</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-sapphire-400">Treatments</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Anti-Aging</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Laser Therapy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Hydration</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Body Contouring</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-sapphire-400">Opening Hours</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li class="flex justify-between"><span>Mon - Fri:</span> <span>9:00 AM - 7:00 PM</span></li>
+                        <li class="flex justify-between"><span>Saturday:</span> <span>10:00 AM - 5:00 PM</span></li>
+                        <li class="flex justify-between"><span>Sunday:</span> <span
+                                class="text-sapphire-500">Closed</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2024 Sapphire Skin Medical Wellness. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Sticky Navbar Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.replace('py-4', 'py-2');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.replace('py-2', 'py-4');
+            }
+        });
+
+        // Scroll Animation Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    </script>
+</body>
+
+</html>
